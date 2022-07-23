@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkpri(pri) {
+        let check = true;
+        if (pri < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(pri); i++) {
+                if (pri % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check
+    }
+    function summ500() {
+        let sum = 0;
+        for (let i = 0; i <= 500; i++) {
+            if (checkpri(i) == true)
+                sum += i
+        }
+        return sum
+    }
+    alert(' tong cua cac so nguyen to nho hon 500 la ' + summ500() )
+</script>
+
+</body>
+</html>

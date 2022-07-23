@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr3 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+        function checkpri(pri) {
+            let check = true;
+            if (pri < 2) {
+                check = false;
+            } else {
+                for (let i = 2; i <= Math.sqrt(pri); i++) {
+                    if (pri % i == 0) {
+                       check = false;
+                        break;
+                    }
+                }
+            }
+            return check
+        }
+        function sumpri(arr) {
+            let sum = 0
+            for (let j = 0; j < arr.length; j++) {
+                if (checkpri(arr[j]) == true)
+                    sum += arr[j]
+            }
+            return sum
+        }
+
+
+
+    alert(' tong cua nhung so nguyen to co trong day la ' + sumpri(arr3))
+
+</script>
+
+</body>
+</html>
